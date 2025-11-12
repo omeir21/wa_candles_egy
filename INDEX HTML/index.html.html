@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WA Candles — Luxury handmade candles</title>
+  <meta name="description" content="Luxury handmade candles from WA Candles — a glow that adds warmth and memories to every moment. Browse products and order via WhatsApp." />
+  <meta name="author" content="WA Candles" />
+  <meta property="og:title" content="WA Candles — Luxury candles" />
+  <meta property="og:description" content="Luxury handmade candles — a glow that adds warmth and memories to every moment." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_EG" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🟢 شيل أي خلفية وخلّي اللوجو شفاف */
+.logo,
+.site img,
+header img {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+    /* ✨ لوجوهات بتطير في الخلفية */
+.floating-logos {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.floating-logos img {
+  position: absolute;
+  bottom: -80px;
+  width: 60px;
+  opacity: 0.2;
+  animation: floatUp 10s linear infinite;
+}
+
+/* حركة الطيران */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(-50vh) scale(1) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.9) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* أماكن عشوائية لكل لوجو */
+.floating-logos img:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-logos img:nth-child(2) { left: 25%; animation-delay: 2s; }
+.floating-logos img:nth-child(3) { left: 40%; animation-delay: 4s; }
+.floating-logos img:nth-child(4) { left: 60%; animation-delay: 1s; }
+.floating-logos img:nth-child(5) { left: 75%; animation-delay: 3s; }
+.floating-logos img:nth-child(6) { left: 90%; animation-delay: 5s; }
+    :root{
+      --bg-gradient: linear-gradient(135deg, #050505 30%, #1a0f06 60%, #2b1a0b 100%);
+      --panel-gradient: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      --card: rgba(18,18,18,0.9);
+      --glass: rgba(255,255,255,0.03);
+      --accent: #e4b45a;
+      --accent-2: #f2d08c;
+      --muted: #d8cfc2;
+      --text: #f7f5f2;
+      --shadow: 0 18px 50px rgba(34,20,6,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+      --radius: 18px;
+      --max-width: 1180px;
+      --glass-2: rgba(255,255,255,0.025);
+      --gold-glow: rgba(228,180,90,0.14);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg-gradient);
+      color: var(--text);
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background-size: 240% 240%;
+      animation: bgShift 18s ease-in-out infinite;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 40%; }
+      50% { background-position: 100% 60%; }
+      100% { background-position: 0% 40%; }
+    }
+
+    .site {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      gap: 26px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .panel {
+      flex: 1;
+      max-width: 900px;
+      background: linear-gradient(180deg, rgba(12,12,12,0.92), rgba(10,10,10,0.86));
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px) saturate(120%);
+      overflow: hidden;
+    }
+
+    .side {
+      width: 320px;
+      min-width: 260px;
+      background: var(--panel-gradient);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.5);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top: 25px;
+    }
+
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px; }
+    .brand { display:flex; gap:12px; align-items:center; }
+
+    /* ✅ اللوجو بعد التعديل */
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius:2Opx;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.5);
+      overflow: hidden;
+      padding: 3px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 20px;
+    }
+
+    /* ✅ تكبير WA Candles ليكون بنفس حجم العنوان الكبير */
+.brand h2 {
+  margin: 0;
+  font-size: 1.2rem; /* نفس حجم hero h1 */
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+/* النص الصغير تحته يفضل خفيف */
+.brand .sub {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 4px;
+}
+    .navlinks a {
+      color:var(--muted);
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      transition: all .18s ease;
+    }
+    .navlinks a:hover { color: var(--text); background: rgba(255,255,255,0.02); }
+
+    .hero { display:flex; gap:18px; align-items:center; padding:18px; border-radius:14px; background: rgba(255,255,255,0.01); margin-bottom:18px; border: 1px solid rgba(255,255,255,0.02); }
+    .hero h1 {
+  color: var(--accent);
+  margin: 0;
+  font-size: 1.4rem; /* ⬅️ أصغر من قبل */
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+    .hero p { color:var(--muted); margin-top:8px; }
+    .cta { margin-top:14px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:10px 18px; border-radius:999px; font-weight:800; color:#2a1400; background: linear-gradient(90deg, var(--accent), var(--accent-2)); text-decoration:none; }
+    .btn.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.04); }
+
+    .offers { margin:14px 0; padding:12px 16px; border-radius:12px; display:flex; justify-content:space-between; background: rgba(228,180,90,0.06); color: var(--muted); }
+    .offers strong { color: var(--accent); }
+
+    .products { display:grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap:16px; margin:10px 0 16px; }
+    .product { background: rgba(255,255,255,0.02); border-radius:12px; padding:12px; border: 1px solid rgba(255,255,255,0.02); transition: .3s; }
+    .product:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .product img { width:100%; height:150px; border-radius:10px; object-fit:cover; }
+    .product h3 { margin:8px 0 0; color: var(--accent); }
+    .product p { color:var(--muted); font-size:0.95rem; }
+    .price { font-weight:800; color:var(--accent); margin-top:6px; }
+    .small-btn { padding:9px 10px; border-radius:10px; text-decoration:none; color:var(--text); background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03); }
+    .small-btn:hover { transform: translateY(-3px); }
+
+    .about, .testimonials, .contact {
+      margin-top:16px; padding:14px; border-radius:12px;
+      background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    footer.main-footer { margin-top:18px; text-align:center; color:var(--muted); font-size:0.92rem; }
+
+    a:focus { outline: 3px solid rgba(228,180,90,0.14); outline-offset:4px; border-radius:8px; } /* ✅ تجاوب الصفحة لكل الشاشات */
+
+/* شاشات أقل من 1024px (تابلت تقريبًا) */
+@media (max-width: 1024px) {
+  .site {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .panel {
+    max-width: 100%;
+  }
+
+  .side {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .navlinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+/* شاشات أقل من 768px (موبايل) */
+@media (max-width: 768px) {
+  body {
+    padding: 16px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brand {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand h2 {
+    font-size: 1.2rem;
+  }
+
+  .navlinks a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .side {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+/* شاشات صغيرة جدًا (أقل من 480px) */
+@media (max-width: 480px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .side {
+    padding: 14px;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="site" role="main" aria-label="WA Candles - site">
+
+    <main class="panel" id="home">
+      <nav class="nav">
+        <div class="brand">
+          <div class="logo">
+            <img src="logo.PNG" alt=" logo WA Candles" />
+          </div>
+          <div>
+            <h2 id="main-title">WA Candles</h2>
+            <div class="sub">Handmade candles</div>
+          </div>
+        </div>
+
+        <div class="navlinks">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#about">Who Are We</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div>
+          <h1>Each candle tells your story — crafted with warmth, love and light</h1>
+          <div class="cta">
+            <a class="btn" href="#products">View products</a>
+            <a class="btn secondary" href="#contact">Order Now</a>
+          </div>
+        </div>
+        
+      </section>
+
+
+      <section id="products">
+        <h3 style="color:var(--accent)">Our selected products</h3>
+        <div class="products">
+          <article class="product">
+            <img src="prod 1.jpg" alt="Lavender Bliss">
+            <h3>Coral Kiss</h3>
+            <p>Coral Kiss , an elegant box that blends the snow-white purity with the warmth of gentle coral accents. a stunning centerpiece that brightens any space and offers a comfortable, contemporary feel</p>
+            
+          </article>
+
+          <article class="product">
+            <img src="prod 2.jpeg" alt="Vanilla Oud">
+            <h3>The Pearl Reserve</h3>
+            <p>The Pearl Reserve ، a unique bowl design where chocolate and cream roses float, surrounded by wax pearls.  a breathtaking centerpiece for elegant gatherings and celebrations.</p>
+          
+          </article>
+
+          <article class="product">
+            <img src="prod 3.jpg" alt="Berry Glow">
+            <h3>Crimson Étoile</h3>
+            <p> Crimson Star a sophisticated gift box overflowing with love, combining the purity of white roses with a touch of passion red dried florals a perfect luxury gift for expressing deep affection</p>
+          </article>  
+          <article class="product">
+            <img src="prod 4.jpg" alt="Berry Glow">
+            <h3>Blush Serenity</h3>
+            <p>The Serenity of Twilight , an artistic arrangement blending softness and bold contrast, featuring golden light on gentle sculptures and a deep red bloom. Imparts a sense of mystery and high-end taste.</p>
+          
+          </article>
+          <article class="product">
+            <img src="prod 5.jpg" alt="Berry Glow">
+            <h3>Velvet Bloom</h3>
+            <p>Velvet Bloom a vibrant cluster of exquisite pink wax roses, meticulously crafted to capture the rich texture of genuine petals under the light. Reflects femininity, luxury, and the concentrated beauty of a perfect flower</p>
+          
+          </article>
+          <article class="product">
+            <img src="prod 6.jpg" alt="Berry Glow">
+            <h3>Celestial Purity</h3>
+            <p> Celestial Purity , an all-white bouquet symbolizing purity and new beginnings. ideal for bridal and newborn gifts, reflecting the highest degree of elegance and simplicity.</p>
+            
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <h3 style="color:var(--accent)"> Who are we?</h3>
+        <pAn></pAn> Egyptian workshop specializing in the manufacture of luxury handmade candles — we carefully select the ingredients and package each product with a quality suitable for gifts and special occasions.</p>
+      </section>
+
+      <section id="contact" class="contact">
+        <h3 style="color:var(--accent)">Contact us</h3>
+        <p><strong>Whatsapp :</strong>
+  <a href="https://wa.me/201558087037" target="_blank" rel="noopener noreferrer" style="color:var(--text)">
+    +20 155 808 7037
+  </a>
+</p>
+        
+
+      <footer class="main-footer">
+       <span class="tagline">Crafted in Egypt with love and light ✨</span>
+      </footer>
+    </main>
+
+    <aside class="side">
+      <div>
+        <strong>Our Links</strong>
+        <div style="font-size:0.85rem; color:var(--muted)">Follow Us On SocialMedia</div>
+      </div>
+
+      <nav style="display:flex; flex-direction:column; gap:10px; margin-top:8px">
+        <a class="small-btn" href="https://www.tiktok.com/@wacandles.8" target="_blank">Tiktok</a>
+        <a class="small-btn" href="https://www.instagram.com/wacandles.eg" target="_blank">Instagram</a>
+        <a class="small-btn" href="https://www.facebook.com/wacandles.eg" target="_blank">Facebook</a>
+        <a class="small-btn" href="https://www.snapchat.com/t/0tn2BdeT" target="_blank">Snapchat</a>
+      </nav>
+    </aside>
+
+  </div>
+  <!-- ✨ خلفية فيها لوجوهات بتطير -->
+<div class="floating-logos">
+  <img src=sparkle.PNG alt="WA logo">
+  <img src=sparkle.PNG alt="WA logo">
+  <img src=sparkle.PNG alt="WA logo">
+  <img src=sparkle.PNG alt="WA logo">
+  <img src=sparkle.PNG alt="WA logo">
+  <img src=sparkle.PNG alt="WA logo">
+</div> 
+</body>
+</html>

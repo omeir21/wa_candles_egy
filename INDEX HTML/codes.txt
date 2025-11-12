@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WA Candles — شموع فاخرة يدوية</title>
+  <meta name="description" content="شموع فاخرة يدوية الصنع من WA Candles — توهج يضيف دفء وذكريات لكل لحظة. تصفح المنتجات واطلب عبر واتساب." />
+  <meta name="author" content="WA Candles" />
+  <meta property="og:title" content="WA Candles — شموع فاخرة" />
+  <meta property="og:description" content="شموع فاخرة يدوية الصنع — توهج يضيف دفء وذكريات لكل لحظة." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ar_EG" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* 🟢 شيل أي خلفية وخلّي اللوجو شفاف */
+.logo,
+.site img,
+header img {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+    /* ✨ لوجوهات بتطير في الخلفية */
+.floating-logos {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.floating-logos img {
+  position: absolute;
+  bottom: -80px;
+  width: 60px;
+  opacity: 0.2;
+  animation: floatUp 10s linear infinite;
+}
+
+/* حركة الطيران */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(-50vh) scale(1) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.9) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* أماكن عشوائية لكل لوجو */
+.floating-logos img:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-logos img:nth-child(2) { left: 25%; animation-delay: 2s; }
+.floating-logos img:nth-child(3) { left: 40%; animation-delay: 4s; }
+.floating-logos img:nth-child(4) { left: 60%; animation-delay: 1s; }
+.floating-logos img:nth-child(5) { left: 75%; animation-delay: 3s; }
+.floating-logos img:nth-child(6) { left: 90%; animation-delay: 5s; }
+    :root{
+      --bg-gradient: linear-gradient(135deg, #050505 30%, #1a0f06 60%, #2b1a0b 100%);
+      --panel-gradient: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      --card: rgba(18,18,18,0.9);
+      --glass: rgba(255,255,255,0.03);
+      --accent: #e4b45a;
+      --accent-2: #f2d08c;
+      --muted: #d8cfc2;
+      --text: #f7f5f2;
+      --shadow: 0 18px 50px rgba(34,20,6,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+      --radius: 18px;
+      --max-width: 1180px;
+      --glass-2: rgba(255,255,255,0.025);
+      --gold-glow: rgba(228,180,90,0.14);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg-gradient);
+      color: var(--text);
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      background-size: 240% 240%;
+      animation: bgShift 18s ease-in-out infinite;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 40%; }
+      50% { background-position: 100% 60%; }
+      100% { background-position: 0% 40%; }
+    }
+
+    .site {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      gap: 26px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .panel {
+      flex: 1;
+      max-width: 760px;
+      background: linear-gradient(180deg, rgba(12,12,12,0.92), rgba(10,10,10,0.86));
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px) saturate(120%);
+      overflow: hidden;
+    }
+
+    .side {
+      width: 320px;
+      min-width: 260px;
+      background: var(--panel-gradient);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.5);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px; }
+    .brand { display:flex; gap:12px; align-items:center; }
+
+    /* ✅ اللوجو بعد التعديل */
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.5);
+      overflow: hidden;
+      padding: 3px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .brand h2 { margin:0; font-size:1.02rem; }
+    .brand .sub { color:var(--muted); font-size:0.86rem; margin-top:2px; }
+
+    .navlinks a {
+      color:var(--muted);
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      transition: all .18s ease;
+    }
+    .navlinks a:hover { color: var(--text); background: rgba(255,255,255,0.02); }
+
+    .hero { display:flex; gap:18px; align-items:center; padding:18px; border-radius:14px; background: rgba(255,255,255,0.01); margin-bottom:18px; border: 1px solid rgba(255,255,255,0.02); }
+    .hero h1 { color: var(--accent); margin:0; font-size:1.7rem; }
+    .hero p { color:var(--muted); margin-top:8px; }
+    .cta { margin-top:14px; display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:10px 18px; border-radius:999px; font-weight:800; color:#2a1400; background: linear-gradient(90deg, var(--accent), var(--accent-2)); text-decoration:none; }
+    .btn.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.04); }
+
+    .offers { margin:14px 0; padding:12px 16px; border-radius:12px; display:flex; justify-content:space-between; background: rgba(228,180,90,0.06); color: var(--muted); }
+    .offers strong { color: var(--accent); }
+
+    .products { display:grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap:16px; margin:10px 0 16px; }
+    .product { background: rgba(255,255,255,0.02); border-radius:12px; padding:12px; border: 1px solid rgba(255,255,255,0.02); transition: .3s; }
+    .product:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .product img { width:100%; height:150px; border-radius:10px; object-fit:cover; }
+    .product h3 { margin:8px 0 0; color: var(--accent); }
+    .product p { color:var(--muted); font-size:0.95rem; }
+    .price { font-weight:800; color:var(--accent); margin-top:6px; }
+    .small-btn { padding:9px 10px; border-radius:10px; text-decoration:none; color:var(--text); background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03); }
+    .small-btn:hover { transform: translateY(-3px); }
+
+    .about, .testimonials, .contact {
+      margin-top:16px; padding:14px; border-radius:12px;
+      background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    footer.main-footer { margin-top:18px; text-align:center; color:var(--muted); font-size:0.92rem; }
+
+    a:focus { outline: 3px solid rgba(228,180,90,0.14); outline-offset:4px; border-radius:8px; }
+  </style>
+</head>
+
+<body>
+  <div class="site" role="main" aria-label="WA Candles - الموقع">
+
+    <main class="panel" id="home">
+      <nav class="nav">
+        <div class="brand">
+          <div class="logo">
+            <img src="images/logo.png" alt="شعار WA Candles" />
+          </div>
+          <div>
+            <h2 id="main-title">WA Candles</h2>
+            <div class="sub">شموع يدوية • خامات طبيعية • توصيل داخل مصر</div>
+          </div>
+        </div>
+
+        <div class="navlinks">
+          <a href="#home">الرئيسية</a>
+          <a href="#products">المنتجات</a>
+          <a href="#about">من نحن</a>
+          <a href="#contact">اتصل بنا</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div>
+          <h1>شموع فاخرة يدوية تضيف دفء لكل لحظة</h1>
+          <p>اختيار يدوي من شمع نقي وزيوت عطرية مختارة. تغليف أنيق، شحن سريع وخدمة عملاء شخصية. تصفح تشكيلتنا المختارة بعناية.</p>
+          <div class="cta">
+            <a class="btn" href="#products">شاهد المنتجات</a>
+            <a class="btn secondary" href="#contact">اطلب الآن</a>
+          </div>
+        </div>
+        
+      </section>
+
+      <div class="offers">
+        <div>عرض ترحيبي — استخدم كود <strong>WA15</strong> للحصول على خصم 15%</div>
+        <div>شحن مجاني للطلبات فوق <strong>EGP 600</strong></div>
+      </div>
+
+      <section id="products">
+        <h3 style="color:var(--accent)">منتجاتنا المختارة</h3>
+        <div class="products">
+          <article class="product">
+            <img src="prod1.webp" alt="Lavender Bliss">
+            <h3>Lavender Bliss</h3>
+            <p>شمعة لافندر بخامات ناعمة — حجم 200 جم — ثابتة العطر.</p>
+            <div class="price">EGP 220</div>
+          </article>
+
+          <article class="product">
+            <img src="prod2.webp" alt="Vanilla Oud">
+            <h3>Vanilla Oud</h3>
+            <p>مزيج شرقي فاخر من الفانيلا والعود — نكهة دافئة وغنية.</p>
+            <div class="price">EGP 290</div>
+          </article>
+
+          <article class="product">
+            <img src="prod3.webp" alt="Berry Glow">
+            <h3>Berry Glow</h3>
+            <p>شمعة فواكهية منعشة — هدية ممتازة للمناسبات.</p>
+            <div class="price">EGP 200</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <h3 style="color:var(--accent)">من نحن</h3>
+        <p>WA Candles ورشة مصرية متخصصة في صناعة الشموع اليدوية الفاخرة — نختار المكونات بعناية ونغلف كل منتج بجودة تناسب الهدايا والمناسبات الخاصة.</p>
+      </section>
+
+      <section id="contact" class="contact">
+        <h3 style="color:var(--accent)">تواصل معنا</h3>
+        <p><strong>واتساب:</strong> <a href="https://wa.me/201234567890" style="color:var(--text)">+20 123 456 7890</a></p>
+        <p><strong>الإيميل:</strong> <a href="mailto:orders@wacandles.eg" style="color:var(--text)">orders@wacandles.eg</a></p>
+      </section>
+
+      <footer class="main-footer">
+        ©️ WA Candles 2025 — <span class="tagline">Light Up Your Moments</span>
+      </footer>
+    </main>
+
+    <aside class="side">
+      <div>
+        <strong>روابطنا</strong>
+        <div style="font-size:0.85rem; color:var(--muted)">تابعنا على السوشيال</div>
+      </div>
+
+      <nav style="display:flex; flex-direction:column; gap:10px; margin-top:8px">
+        <a class="small-btn" href="https://www.tiktok.com/@wacandles.8" target="_blank">تيك توك</a>
+        <a class="small-btn" href="https://www.instagram.com/wacandles.eg" target="_blank">انستجرام</a>
+        <a class="small-btn" href="https://www.facebook.com/wacandles.eg" target="_blank">فيسبوك</a>
+        <a class="small-btn" href="https://www.snapchat.com/t/0tn2BdeT" target="_blank">سناب شات</a>
+      </nav>
+    </aside>
+
+  </div>
+  <!-- ✨ خلفية فيها لوجوهات بتطير -->
+<div class="floating-logos">
+  <img src="images/sparkle.png" alt="WA logo">
+  <img src="images/sparkle.png" alt="WA logo">
+  <img src="images/sparkle.png" alt="WA logo">
+  <img src="images/sparkle.png" alt="WA logo">
+  <img src="images/sparkle.png" alt="WA logo">
+  <img src="images/sparkle.png" alt="WA logo">
+</div>
+</body>
+</html>
